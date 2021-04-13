@@ -23,12 +23,10 @@ const [posts, setPosts] = useState(posts);
   const likePost = postId => {
 
     function addLikes(id) {
-      setPosts(posts.map(post) => {
+      setPosts(posts.map((post) => {
         if(post.id === id) {
           return {...post, post + 1}
         }
-        return post;
-      })
     }
     /*
       This function serves the purpose of increasing the number of likes by one, of the post with a given id.
@@ -47,7 +45,7 @@ const [posts, setPosts] = useState(posts);
     <div className='App'>
       {/* Add SearchBar and Posts here to render them */}
       <SearchBar />
-      <Posts />
+      <Posts dummyData={posts} />
       {/* Check the implementation of each component, to see what props they require, if any! */}
     </div>
   );
